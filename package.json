@@ -1,6 +1,6 @@
 {
-  "name": "profile-picture",
-  "version": "0.0.10",
+  "name": "profile-picture-waka",
+  "version": "0.0.1",
   "description": "Simple way to change your profile picture",
   "main": "build/index.js",
   "dependencies": {
@@ -40,6 +40,6 @@
     "react",
     "component"
   ],
-  "author": "\" <dsalvagni>",
+  "author": "wakababa",
   "license": "MIT"
 }

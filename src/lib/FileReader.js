@@ -13,14 +13,10 @@ const UNKNOWN = "UNKNOWN";
  * @returns {object} FileReader instance
  */
 const fileReader = (file, settings) => {
-  if (!file.type.match("image.*"))
-    if (typeof config.onError === "function")
-      config.onError.call(this, { error: INVALID_FILE_TYPE });
-
   const config = {
-    onError: () => {},
-    onLoadStart: () => {},
-    onLoadEnd: () => {},
+    onError: () => { },
+    onLoadStart: () => { },
+    onLoadEnd: () => { },
     ...settings
   };
 
@@ -41,7 +37,9 @@ const fileReader = (file, settings) => {
     if (typeof config.onError === "function")
       config.onError.call(this, { error: UNKNOWN });
   };
-
+  if (!file.type.match("image.*"))
+    if (typeof config.onError === "function")
+      config.onError.call(this, { error: INVALID_FILE_TYPE });
   reader.readAsDataURL(file);
   return reader;
 };
